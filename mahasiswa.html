@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Mahasiswa – Universitas Terbuka Jakarta</title>
+    <meta name="description" content="Informasi dan layanan mahasiswa Universitas Terbuka Jakarta." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo UT" class="logo-img" /><span>Universitas
+                Terbuka</span></a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="dropdown" id="profile-dropdown"><button class="dropdown-toggle">Profile ▾</button>
+                <div class="dropdown-content">
+                    <a href="profile.html#direktur">Direktur</a><a href="profile.html#visi-misi">Visi & Misi</a>
+                    <a href="profile.html#manajer-tata-usaha">Manajer Tata Usaha</a>
+                    <a href="profile.html#manajer-marketing">Manajer Marketing & Registrasi</a>
+                    <a href="profile.html#manajer-pembelajaran">Manajer Pembelajaran & Ujian</a>
+                    <a href="profile.html#struktur-organisasi">Struktur Organisasi</a>
+                    <a href="profile.html#ut-pusat">UT Pusat</a><a href="profile.html#akreditasi">Akreditasi
+                        Universitas</a>
+                </div>
+            </div>
+            <a href="akademik.html" class="nav-item">Akademik</a>
+            <a href="mahasiswa.html" class="nav-item active">Mahasiswa</a>
+            <a href="kegiatan.html" class="nav-item">Kegiatan</a>
+            <a href="brosur.html" class="nav-item">Brosur</a>
+            <a href="tutor.html" class="nav-item">Tutor</a>
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="https://myut.ut.ac.id/auth/login/v2" class="nav-item cta-nav" target="_blank">Pendaftaran</a>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <img src="assets/activity.png" alt="Mahasiswa" />
+        <div class="overlay"></div>
+        <div class="banner-text">
+            <h1>Layanan Mahasiswa</h1>
+            <p>Akses seluruh layanan dan informasi untuk mahasiswa UT Jakarta.</p>
+        </div>
+    </section>
+
+    <main>
+
+        <!-- LAYANAN UTAMA -->
+        <div class="section">
+            <h2 class="section-title">Layanan Utama Mahasiswa</h2>
+            <p class="section-subtitle">Portal dan platform yang tersedia untuk mendukung perkuliahan Anda.</p>
+            <div class="card-grid">
+                <a href="https://elearning.ut.ac.id/" target="_blank" class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Tutorial Online</h3>
+                    <p>Akses platform e-learning untuk mengikuti tutorial online setiap mata kuliah.</p>
+                </a>
+                <a href="https://myut.ut.ac.id/auth/login/v2" target="_blank" class="card">
+                    <div class="card-icon">🔐</div>
+                    <h3>MyUT</h3>
+                    <p>Portal mahasiswa untuk registrasi, cek nilai, dan kelola akun.</p>
+                </a>
+                <a href="https://pustaka.ut.ac.id/lib/ruangbaca/" target="_blank" class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Ruang Baca Virtual</h3>
+                    <p>Perpustakaan digital dengan ribuan koleksi bahan ajar dan referensi.</p>
+                </a>
+                <a href="https://www.ut.ac.id/kit-mahasiswa/" target="_blank" class="card">
+                    <div class="card-icon">📦</div>
+                    <h3>KIT Mahasiswa</h3>
+                    <p>Informasi lengkap paket bahan ajar yang dikirimkan ke mahasiswa.</p>
+                </a>
+                <a href="https://www.ut.ac.id/katalog/" target="_blank" class="card">
+                    <div class="card-icon">📖</div>
+                    <h3>Katalog</h3>
+                    <p>Panduan kurikulum dan daftar mata kuliah setiap program studi.</p>
+                </a>
+                <a href="https://www.ut.ac.id/kalender-akademik/" target="_blank" class="card">
+                    <div class="card-icon">📅</div>
+                    <h3>Kalender Akademik</h3>
+                    <p>Jadwal akademik resmi termasuk registrasi, tutorial, dan ujian.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- INFORMASI TAMBAHAN -->
+        <div class="section section-dark" style="background:var(--bg-secondary);">
+            <h2 class="section-title">Informasi Tambahan</h2>
+            <p class="section-subtitle">Layanan pendukung lainnya untuk mahasiswa UT Jakarta.</p>
+            <div class="card-grid">
+                <a href="https://myut.ut.ac.id/beranda/lacak-bahan-ajar" target="_blank" class="card">
+                    <div class="card-icon">📦</div>
+                    <h3>Tracking Bahan Ajar</h3>
+                    <p>Lacak pengiriman bahan ajar Anda secara real-time.</p>
+                </a>
+                <a href="https://www.ut.ac.id/biaya-pendidikan/" target="_blank" class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Biaya Pendidikan</h3>
+                    <p>Informasi rincian biaya kuliah per semester dan per mata kuliah.</p>
+                </a>
+                <a href="https://www.ut.ac.id/formulir/" target="_blank" class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Formulir Mahasiswa</h3>
+                    <p>Download formulir registrasi, cuti, alih kredit, dan lainnya.</p>
+                </a>
+                <a href="https://www.ut.ac.id/orientasi-studi-mahasiswa-baru-osmb/" target="_blank" class="card">
+                    <div class="card-icon">🎉</div>
+                    <h3>OSMB</h3>
+                    <p>Orientasi Studi Mahasiswa Baru untuk memulai perjalanan di UT.</p>
+                </a>
+                <a href="https://www.ut.ac.id/lpkbjj/" target="_blank" class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>LPKBJJ</h3>
+                    <p>Laporan Pelaksanaan KBJJ untuk dokumentasi kegiatan belajar.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- PLATFORM ONLINE -->
+        <div class="section">
+            <h2 class="section-title">Platform Online</h2>
+            <p class="section-subtitle">Sistem informasi dan platform digital yang digunakan mahasiswa UT.</p>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Keterangan</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://ecampus.ut.ac.id" target="_blank"
+                                style="color:var(--accent);">ecampus.ut.ac.id</a></td>
+                        <td>Portal akademik terintegrasi</td>
+                        <td><span class="badge badge-green">Aktif</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://elearning.ut.ac.id/" target="_blank"
+                                style="color:var(--accent);">elearning.ut.ac.id</a></td>
+                        <td>Platform tutorial online (LMS)</td>
+                        <td><span class="badge badge-green">Aktif</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://silayar.ut.ac.id/" target="_blank"
+                                style="color:var(--accent);">silayar.ut.ac.id</a></td>
+                        <td>Sistem layanan akademik terpadu</td>
+                        <td><span class="badge badge-green">Aktif</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://praktik.ut.ac.id/custom_login" target="_blank"
+                                style="color:var(--accent);">praktik.ut.ac.id</a></td>
+                        <td>Sistem praktik dan praktikum online</td>
+                        <td><span class="badge badge-blue">Online</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://the.ut.ac.id/" target="_blank"
+                                style="color:var(--accent);">the.ut.ac.id</a></td>
+                        <td>Take Home Exam platform</td>
+                        <td><span class="badge badge-blue">Online</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://suo.ut.ac.id/uoui/#/" target="_blank"
+                                style="color:var(--accent);">suo.ut.ac.id</a></td>
+                        <td>Sistem Ujian Online UT</td>
+                        <td><span class="badge badge-green">Aktif</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ALUMNI -->
+        <div class="section section-dark" style="background:var(--bg-secondary);">
+            <h2 class="section-title">Alumni</h2>
+            <p class="section-subtitle">Layanan untuk alumni Universitas Terbuka.</p>
+            <div class="card-grid">
+                <a href="https://aksi.ut.ac.id/alumni" target="_blank" class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>SK Yudisium</h3>
+                    <p>Cek dan unduh Surat Keputusan Yudisium Anda secara online.</p>
+                </a>
+                <a href="https://tracer.ut.ac.id/tracer" target="_blank" class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Tracer Alumni</h3>
+                    <p>Survei penelusuran alumni untuk pengembangan mutu lulusan UT.</p>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Universitas Terbuka Banjarmasin</h4>
+                <p>Jl. Sultan Adam No.128, Surgi Mufti, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan
+                    70122</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4><a href="index.html">Home</a><a href="profile.html">Profile</a><a
+                    href="akademik.html">Akademik</a><a href="mahasiswa.html">Mahasiswa</a>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4><a href="kegiatan.html">Kegiatan</a><a href="brosur.html">Brosur</a><a
+                    href="tutor.html">Tutor</a><a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan</h4><a href="https://www.ut.ac.id" target="_blank">UT Pusat</a><a
+                    href="https://elearning.ut.ac.id/" target="_blank">Tutorial Online</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Universitas Terbuka Banjarmasin. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

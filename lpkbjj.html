@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Jadwal LPKBJJ – Universitas Terbuka Banjarmasin</title>
+    <meta name="description" content="Rundown Kegiatan LPKBJJ UT Banjarmasin – Program Studi Hukum, 7–10 Maret." />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== LPKBJJ-specific styles ===== */
+        .schedule-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .schedule-header .badge-large {
+            display: inline-block;
+            background: rgba(255, 180, 0, 0.15);
+            color: var(--accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .schedule-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .schedule-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .schedule-meta .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 0.5rem 1.2rem;
+            font-size: .88rem;
+        }
+
+        .schedule-meta .meta-item .icon {
+            font-size: 1.1rem;
+        }
+
+        .schedule-meta .meta-item .label {
+            color: var(--text-secondary);
+            font-size: .8rem;
+        }
+
+        .schedule-meta .meta-item .value {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Day cards */
+        .day-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: all .3s;
+        }
+
+        .day-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, rgba(255, 180, 0, 0.15), rgba(255, 180, 0, 0.05));
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .day-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .day-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .day-info span {
+            color: var(--text-secondary);
+            font-size: .85rem;
+        }
+
+        .day-body {
+            padding: 0;
+        }
+
+        .schedule-row {
+            display: flex;
+            align-items: stretch;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background .2s;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-row:hover {
+            background: var(--glass);
+        }
+
+        .schedule-row.break {
+            background: rgba(255, 180, 0, 0.04);
+        }
+
+        .schedule-time {
+            width: 160px;
+            padding: 1rem 1.5rem;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--accent);
+            border-right: 2px solid rgba(255, 180, 0, 0.15);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .schedule-activity {
+            padding: 1rem 1.5rem;
+            font-size: .92rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex: 1;
+        }
+
+        .schedule-activity .activity-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* Notice box */
+        .notice-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(255, 180, 0, 0.08));
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: var(--radius);
+            padding: 1.8rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .notice-box h3 {
+            color: var(--red);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .notice-box p {
+            color: var(--text-secondary);
+            font-size: .9rem;
+            line-height: 1.8;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: .9rem;
+            margin-bottom: 2rem;
+            transition: all .2s;
+        }
+
+        .back-link:hover {
+            gap: 0.7rem;
+        }
+
+        @media(max-width:700px) {
+            .schedule-time {
+                width: 110px;
+                padding: 0.8rem 1rem;
+                font-size: .8rem;
+            }
+
+            .schedule-activity {
+                padding: 0.8rem 1rem;
+                font-size: .85rem;
+            }
+
+            .schedule-meta {
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo UT" class="logo-img" /><span>Universitas
+                Terbuka</span></a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="dropdown" id="profile-dropdown">
+                <button class="dropdown-toggle">Profile ▾</button>
+                <div class="dropdown-content">
+                    <a href="profile.html#direktur">Direktur</a><a href="profile.html#visi-misi">Visi & Misi</a>
+                    <a href="profile.html#manajer-tata-usaha">Manajer Tata Usaha</a>
+                    <a href="profile.html#manajer-marketing">Manajer Marketing & Registrasi</a>
+                    <a href="profile.html#manajer-pembelajaran">Manajer Pembelajaran & Ujian</a>
+                    <a href="profile.html#struktur-organisasi">Struktur Organisasi</a>
+                    <a href="profile.html#ut-pusat">UT Pusat</a><a href="profile.html#akreditasi">Akreditasi
+                        Universitas</a>
+                </div>
+            </div>
+            <a href="akademik.html" class="nav-item active">Akademik</a>
+            <a href="mahasiswa.html" class="nav-item">Mahasiswa</a>
+            <a href="kegiatan.html" class="nav-item">Kegiatan</a>
+            <a href="brosur.html" class="nav-item">Brosur</a>
+            <a href="tutor.html" class="nav-item">Tutor</a>
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="https://myut.ut.ac.id/auth/login/v2" class="nav-item cta-nav" target="_blank">Pendaftaran</a>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <section class="page-banner">
+        <img src="assets/akademik.png" alt="LPKBJJ" />
+        <div class="overlay"></div>
+        <div class="banner-text">
+            <h1>Jadwal LPKBJJ</h1>
+            <p>Lembaga Pengelola Kegiatan Belajar Jarak Jauh – UT Banjarmasin</p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="section">
+            <a href="akademik.html" class="back-link">← Kembali ke Akademik</a>
+
+            <!-- HEADER -->
+            <div class="schedule-header">
+                <div class="badge-large">📋 Rundown Kegiatan</div>
+                <h2>LPKBJJ UT Banjarmasin</h2>
+                <p style="color:var(--text-secondary);font-size:1rem;margin-top:0.3rem;">Program Studi Hukum</p>
+
+                <div class="schedule-meta">
+                    <div class="meta-item">
+                        <span class="icon">📅</span>
+                        <div>
+                            <div class="label">Tanggal</div>
+                            <div class="value">7 – 10 Maret</div>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <span class="icon">🕗</span>
+                        <div>
+                            <div class="label">Waktu</div>
+                            <div class="value">08.00 – 12.00 WITA</div>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <span class="icon">⚖️</span>
+                        <div>
+                            <div class="label">Prodi</div>
+                            <div class="value">Hukum</div>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <div class="label">Lokasi</div>
+                            <div class="value">Hotel Darul Istiqamah Barabai</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 1 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">1</div>
+                    <div class="day-info">
+                        <h3>Hari Pertama – 7 Maret</h3>
+                        <span>Pembukaan & Pengantar Hukum Indonesia</span>
+                    </div>
+                </div>
+                <div class="day-body">
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.00 – 08.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📝</span> Registrasi & Presensi Peserta
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.30 – 09.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">🎤</span> Sosialisasi Sistem Pembelajaran Jarak Jauh
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">09.30 – 10.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📚</span> Pengantar Ilmu Hukum & Struktur Kurikulum
+                        </div>
+                    </div>
+                    <div class="schedule-row break">
+                        <div class="schedule-time">10.30 – 10.45</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">☕</span> Istirahat
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">10.45 – 12.00</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">⚖️</span> Tutorial Mata Kuliah Pengantar Hukum Indonesia
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">2</div>
+                    <div class="day-info">
+                        <h3>Hari Kedua – 8 Maret</h3>
+                        <span>Hukum Perdata, Pidana & Studi Kasus</span>
+                    </div>
+                </div>
+                <div class="day-body">
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.00 – 08.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📝</span> Presensi & Evaluasi Hari Pertama
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.30 – 09.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📘</span> Tutorial Hukum Perdata
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">09.30 – 10.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📕</span> Tutorial Hukum Pidana
+                        </div>
+                    </div>
+                    <div class="schedule-row break">
+                        <div class="schedule-time">10.30 – 10.45</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">☕</span> Istirahat
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">10.45 – 12.00</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">💬</span> Diskusi Studi Kasus Dasar Hukum
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 3 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">3</div>
+                    <div class="day-info">
+                        <h3>Hari Ketiga – 9 Maret</h3>
+                        <span>Hukum Tata Negara, Administrasi & Analisis Kasus</span>
+                    </div>
+                </div>
+                <div class="day-body">
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.00 – 08.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📝</span> Presensi
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.30 – 09.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">🏛️</span> Tutorial Hukum Tata Negara
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">09.30 – 10.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📋</span> Tutorial Hukum Administrasi Negara
+                        </div>
+                    </div>
+                    <div class="schedule-row break">
+                        <div class="schedule-time">10.30 – 10.45</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">☕</span> Istirahat
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">10.45 – 12.00</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">🔍</span> Latihan Analisis Kasus & Tanya Jawab
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 4 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">4</div>
+                    <div class="day-info">
+                        <h3>Hari Keempat – 10 Maret</h3>
+                        <span>Evaluasi, Simulasi Ujian & Penutup</span>
+                    </div>
+                </div>
+                <div class="day-body">
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.00 – 08.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📝</span> Presensi
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">08.30 – 09.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📊</span> Pembahasan Tugas & Evaluasi Materi
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">09.30 – 10.30</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">📝</span> Simulasi Ujian
+                        </div>
+                    </div>
+                    <div class="schedule-row break">
+                        <div class="schedule-time">10.30 – 10.45</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">☕</span> Istirahat
+                        </div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-time">10.45 – 12.00</div>
+                        <div class="schedule-activity">
+                            <span class="activity-icon">🎓</span> Penutup & Arahan Akademik
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KETERANGAN -->
+            <div class="notice-box">
+                <h3>⚠️ Keterangan Penting</h3>
+                <p>Seluruh mahasiswa Program Studi Hukum yang mengikuti kegiatan ini <strong style="color:#fff;">wajib
+                        membayar iuran kegiatan</strong> sesuai ketentuan yang telah
+                    ditetapkan oleh panitia LPKBJJ UT Banjarmasin. Pembayaran iuran menjadi syarat administrasi
+                    untuk mengikuti seluruh rangkaian kegiatan dari tanggal <strong style="color:#fff;">7 hingga
+                        10 Maret</strong>.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Universitas Terbuka Banjarmasin</h4>
+                <p>Jl. Sultan Adam No.128, Surgi Mufti, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan
+                    70122</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4>
+                <a href="index.html">Home</a><a href="profile.html">Profile</a>
+                <a href="akademik.html">Akademik</a><a href="mahasiswa.html">Mahasiswa</a>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <a href="kegiatan.html">Kegiatan</a><a href="brosur.html">Brosur</a>
+                <a href="tutor.html">Tutor</a><a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan</h4>
+                <a href="https://www.ut.ac.id" target="_blank">UT Pusat</a>
+                <a href="https://elearning.ut.ac.id/" target="_blank">Tutorial Online</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Universitas Terbuka Banjarmasin. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

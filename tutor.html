@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Tutor – Universitas Terbuka Jakarta</title>
+    <meta name="description" content="Daftar tutor dan jadwal tutorial Universitas Terbuka Jakarta." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo UT" class="logo-img" /><span>Universitas
+                Terbuka</span></a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="dropdown" id="profile-dropdown"><button class="dropdown-toggle">Profile ▾</button>
+                <div class="dropdown-content">
+                    <a href="profile.html#direktur">Direktur</a><a href="profile.html#visi-misi">Visi & Misi</a>
+                    <a href="profile.html#manajer-tata-usaha">Manajer Tata Usaha</a>
+                    <a href="profile.html#manajer-marketing">Manajer Marketing & Registrasi</a>
+                    <a href="profile.html#manajer-pembelajaran">Manajer Pembelajaran & Ujian</a>
+                    <a href="profile.html#struktur-organisasi">Struktur Organisasi</a>
+                    <a href="profile.html#ut-pusat">UT Pusat</a><a href="profile.html#akreditasi">Akreditasi
+                        Universitas</a>
+                </div>
+            </div>
+            <a href="akademik.html" class="nav-item">Akademik</a>
+            <a href="mahasiswa.html" class="nav-item">Mahasiswa</a>
+            <a href="kegiatan.html" class="nav-item">Kegiatan</a>
+            <a href="brosur.html" class="nav-item">Brosur</a>
+            <a href="tutor.html" class="nav-item active">Tutor</a>
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="https://myut.ut.ac.id/auth/login/v2" class="nav-item cta-nav" target="_blank">Pendaftaran</a>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <img src="assets/akademik.png" alt="Tutor" />
+        <div class="overlay"></div>
+        <div class="banner-text">
+            <h1>Tutor UT Jakarta</h1>
+            <p>Daftar tutor, jadwal tutorial, dan pembimbing akademik mahasiswa.</p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="section">
+            <h2 class="section-title">Daftar Tutor</h2>
+            <p class="section-subtitle">Para tutor berpengalaman yang siap membimbing Anda.</p>
+            <div class="tutor-grid">
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Dr. Andi Wijaya, M.Pd.</h3>
+                    <div class="subject">Manajemen</div>
+                    <p>Tutor tutorial online dan tatap muka mata kuliah Pengantar Manajemen dan Manajemen Keuangan.</p>
+                </div>
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Dra. Rina Marlina, M.Si.</h3>
+                    <div class="subject">Akuntansi</div>
+                    <p>Pembimbing akademik dan tutor mata kuliah Pengantar Akuntansi dan Akuntansi Biaya.</p>
+                </div>
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Dr. Hendra Saputra, M.Kom.</h3>
+                    <div class="subject">Sistem Informasi</div>
+                    <p>Tutor mata kuliah Pengantar Teknologi Informasi dan Basis Data.</p>
+                </div>
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Dra. Laila Husna, M.A.</h3>
+                    <div class="subject">Ilmu Komunikasi</div>
+                    <p>Tutor mata kuliah Pengantar Ilmu Komunikasi dan Komunikasi Massa.</p>
+                </div>
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Dr. Bambang Purnomo, S.H., M.H.</h3>
+                    <div class="subject">Ilmu Hukum</div>
+                    <p>Tutor mata kuliah Pengantar Ilmu Hukum dan Hukum Pidana.</p>
+                </div>
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Dr. Sri Wahyuni, M.Pd.</h3>
+                    <div class="subject">Pendidikan</div>
+                    <p>Tutor mata kuliah Strategi Pembelajaran dan Evaluasi Pendidikan.</p>
+                </div>
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Ir. Dedi Kurniawan, M.T.</h3>
+                    <div class="subject">Teknik Sipil</div>
+                    <p>Tutor mata kuliah Mekanika Teknik dan Konstruksi Bangunan.</p>
+                </div>
+                <div class="tutor-card">
+                    <img src="assets/direktur.png" alt="Tutor" class="tutor-avatar" />
+                    <h3>Dr. Yuni Astuti, M.Si.</h3>
+                    <div class="subject">Biologi</div>
+                    <p>Tutor mata kuliah Biologi Umum dan Ekologi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- JADWAL TUTORIAL -->
+        <div class="section section-dark" style="background:var(--bg-secondary);">
+            <h2 class="section-title">Jadwal Tutorial</h2>
+            <p class="section-subtitle">Jadwal tutorial online dan tatap muka semester berjalan.</p>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Mata Kuliah</th>
+                        <th>Tutor</th>
+                        <th>Hari</th>
+                        <th>Waktu</th>
+                        <th>Tipe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pengantar Manajemen</td>
+                        <td>Dr. Andi Wijaya</td>
+                        <td>Senin</td>
+                        <td>19:00 – 21:00</td>
+                        <td><span class="badge badge-green">Online</span></td>
+                    </tr>
+                    <tr>
+                        <td>Pengantar Akuntansi</td>
+                        <td>Dra. Rina Marlina</td>
+                        <td>Selasa</td>
+                        <td>19:00 – 21:00</td>
+                        <td><span class="badge badge-green">Online</span></td>
+                    </tr>
+                    <tr>
+                        <td>Pengantar TI</td>
+                        <td>Dr. Hendra Saputra</td>
+                        <td>Rabu</td>
+                        <td>19:00 – 21:00</td>
+                        <td><span class="badge badge-green">Online</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ilmu Komunikasi</td>
+                        <td>Dra. Laila Husna</td>
+                        <td>Kamis</td>
+                        <td>19:00 – 21:00</td>
+                        <td><span class="badge badge-blue">TTM</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ilmu Hukum</td>
+                        <td>Dr. Bambang Purnomo</td>
+                        <td>Jumat</td>
+                        <td>14:00 – 16:00</td>
+                        <td><span class="badge badge-green">Online</span></td>
+                    </tr>
+                    <tr>
+                        <td>Strategi Pembelajaran</td>
+                        <td>Dr. Sri Wahyuni</td>
+                        <td>Sabtu</td>
+                        <td>09:00 – 11:00</td>
+                        <td><span class="badge badge-blue">TTM</span></td>
+                    </tr>
+                    <tr>
+                        <td>Biologi Umum</td>
+                        <td>Dr. Yuni Astuti</td>
+                        <td>Sabtu</td>
+                        <td>13:00 – 15:00</td>
+                        <td><span class="badge badge-green">Online</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Universitas Terbuka Banjarmasin</h4>
+                <p>Jl. Sultan Adam No.128, Surgi Mufti, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan
+                    70122</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4><a href="index.html">Home</a><a href="profile.html">Profile</a><a
+                    href="akademik.html">Akademik</a><a href="mahasiswa.html">Mahasiswa</a>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4><a href="kegiatan.html">Kegiatan</a><a href="brosur.html">Brosur</a><a
+                    href="tutor.html">Tutor</a><a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan</h4><a href="https://www.ut.ac.id" target="_blank">UT Pusat</a><a
+                    href="https://elearning.ut.ac.id/" target="_blank">Tutorial Online</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Universitas Terbuka Banjarmasin. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

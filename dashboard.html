@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Dashboard – Universitas Terbuka Jakarta</title>
+    <meta name="description"
+        content="Dashboard layanan mahasiswa Universitas Terbuka Jakarta: jadwal tutorial, skema ujian, dan cetak KTPU." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo UT" class="logo-img" /><span>Universitas
+                Terbuka</span></a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <div class="dropdown" id="profile-dropdown"><button class="dropdown-toggle">Profile ▾</button>
+                <div class="dropdown-content">
+                    <a href="profile.html#direktur">Direktur</a><a href="profile.html#visi-misi">Visi & Misi</a>
+                    <a href="profile.html#manajer-tata-usaha">Manajer Tata Usaha</a>
+                    <a href="profile.html#manajer-marketing">Manajer Marketing & Registrasi</a>
+                    <a href="profile.html#manajer-pembelajaran">Manajer Pembelajaran & Ujian</a>
+                    <a href="profile.html#struktur-organisasi">Struktur Organisasi</a>
+                    <a href="profile.html#ut-pusat">UT Pusat</a><a href="profile.html#akreditasi">Akreditasi
+                        Universitas</a>
+                </div>
+            </div>
+            <a href="akademik.html" class="nav-item">Akademik</a>
+            <a href="mahasiswa.html" class="nav-item">Mahasiswa</a>
+            <a href="kegiatan.html" class="nav-item">Kegiatan</a>
+            <a href="brosur.html" class="nav-item">Brosur</a>
+            <a href="tutor.html" class="nav-item">Tutor</a>
+            <a href="dashboard.html" class="nav-item active">Dashboard</a>
+            <a href="https://myut.ut.ac.id/auth/login/v2" class="nav-item cta-nav" target="_blank">Pendaftaran</a>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <img src="assets/hero.png" alt="Dashboard" />
+        <div class="overlay"></div>
+        <div class="banner-text">
+            <h1>Dashboard Mahasiswa</h1>
+            <p>Pusat layanan dan informasi terkini untuk mahasiswa UT Jakarta.</p>
+        </div>
+    </section>
+
+    <main>
+
+        <!-- QUICK STATS -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="num">2026/1</div>
+                <div class="label">Semester Aktif</div>
+            </div>
+            <div class="stat">
+                <div class="num">15 Mar</div>
+                <div class="label">Batas Registrasi</div>
+            </div>
+            <div class="stat">
+                <div class="num">20 Mei</div>
+                <div class="label">Jadwal UAS</div>
+            </div>
+            <div class="stat">
+                <div class="num">6</div>
+                <div class="label">Tutorial Aktif</div>
+            </div>
+        </div>
+
+        <!-- LAYANAN DASHBOARD -->
+        <div class="section">
+            <h2 class="section-title">Layanan Dashboard</h2>
+            <p class="section-subtitle">Akses cepat ke layanan-layanan penting untuk mahasiswa UT Jakarta.</p>
+            <div class="dash-grid">
+                <a href="https://dashboard-jakarta.ut.ac.id/jadwal-tutorial-mahasiswa/" target="_blank"
+                    class="dash-card">
+                    <div class="icon">📅</div>
+                    <h3>Jadwal Tutorial</h3>
+                    <p>Lihat jadwal tutorial online dan tatap muka semester ini.</p>
+                    <div class="value">7 Sesi</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:70%;"></div>
+                    </div>
+                </a>
+                <a href="https://dashboard-jakarta.ut.ac.id/skema-ujian/" target="_blank" class="dash-card">
+                    <div class="icon">📝</div>
+                    <h3>Skema Ujian</h3>
+                    <p>Jadwal dan skema ujian akhir semester mahasiswa.</p>
+                    <div class="value">UAS 2026</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:30%;"></div>
+                    </div>
+                </a>
+                <a href="https://dashboard-jakarta.ut.ac.id/cetak_ktpu/" target="_blank" class="dash-card">
+                    <div class="icon">🖨️</div>
+                    <h3>Cetak KTPU</h3>
+                    <p>Cetak Kartu Tanda Peserta Ujian untuk numpang ujian.</p>
+                    <div class="value">Aktif</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:100%;"></div>
+                    </div>
+                </a>
+                <a href="https://ecampus.ut.ac.id" target="_blank" class="dash-card">
+                    <div class="icon">🏫</div>
+                    <h3>eCampus</h3>
+                    <p>Portal akademik terintegrasi untuk semua kebutuhan.</p>
+                    <div class="value">Online</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:100%;"></div>
+                    </div>
+                </a>
+                <a href="https://elearning.ut.ac.id/" target="_blank" class="dash-card">
+                    <div class="icon">💻</div>
+                    <h3>Tutorial Online</h3>
+                    <p>Akses LMS untuk mengikuti tutorial dan mengerjakan tugas.</p>
+                    <div class="value">8 MK</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:85%;"></div>
+                    </div>
+                </a>
+                <a href="https://myut.ut.ac.id/auth/login/v2" target="_blank" class="dash-card">
+                    <div class="icon">🔐</div>
+                    <h3>MyUT</h3>
+                    <p>Portal mahasiswa: registrasi, nilai, keuangan, dan dokumen.</p>
+                    <div class="value">Login</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:50%;"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- PENGUMUMAN -->
+        <div class="section section-dark" style="background:var(--bg-secondary);">
+            <h2 class="section-title">Pengumuman Penting</h2>
+            <p class="section-subtitle">Informasi terbaru yang perlu diperhatikan oleh mahasiswa.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🔔</div>
+                    <h3>Batas Akhir Registrasi MK</h3>
+                    <p>Registrasi mata kuliah semester 2026/1 ditutup tanggal 15 Maret 2026. Segera lakukan registrasi.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📢</div>
+                    <h3>OSMB Tahap II</h3>
+                    <p>Orientasi Studi Mahasiswa Baru Tahap II akan dilaksanakan pada 22-23 Maret 2026 secara daring.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Pembayaran SPP</h3>
+                    <p>Batas akhir pembayaran SPP semester genap: 10 Maret 2026. Hindari keterlambatan.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Nilai Semester Lalu</h3>
+                    <p>Nilai semester 2025/2 telah tersedia di portal MyUT. Segera cek dan ajukan keberatan jika perlu.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- KALENDER -->
+        <div class="section">
+            <h2 class="section-title">Kalender Akademik 2026</h2>
+            <p class="section-subtitle">Jadwal penting semester berjalan.</p>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Kegiatan</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 Jan – 15 Mar 2026</td>
+                        <td>Registrasi Mahasiswa</td>
+                        <td><span class="badge badge-yellow">Berlangsung</span></td>
+                    </tr>
+                    <tr>
+                        <td>22 – 23 Mar 2026</td>
+                        <td>OSMB Tahap II</td>
+                        <td><span class="badge badge-blue">Akan Datang</span></td>
+                    </tr>
+                    <tr>
+                        <td>1 Apr – 30 Mei 2026</td>
+                        <td>Tutorial Online & Tatap Muka</td>
+                        <td><span class="badge badge-blue">Akan Datang</span></td>
+                    </tr>
+                    <tr>
+                        <td>20 – 25 Mei 2026</td>
+                        <td>Ujian Akhir Semester (UAS)</td>
+                        <td><span class="badge badge-blue">Akan Datang</span></td>
+                    </tr>
+                    <tr>
+                        <td>15 Jul 2026</td>
+                        <td>Pengumuman Nilai</td>
+                        <td><span class="badge badge-blue">Akan Datang</span></td>
+                    </tr>
+                    <tr>
+                        <td>1 Agu 2026</td>
+                        <td>Wisuda Periode III</td>
+                        <td><span class="badge badge-blue">Akan Datang</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Universitas Terbuka Banjarmasin</h4>
+                <p>Jl. Sultan Adam No.128, Surgi Mufti, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan
+                    70122</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi</h4><a href="index.html">Home</a><a href="profile.html">Profile</a><a
+                    href="akademik.html">Akademik</a><a href="mahasiswa.html">Mahasiswa</a>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4><a href="kegiatan.html">Kegiatan</a><a href="brosur.html">Brosur</a><a
+                    href="tutor.html">Tutor</a><a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan</h4><a href="https://www.ut.ac.id" target="_blank">UT Pusat</a><a
+                    href="https://elearning.ut.ac.id/" target="_blank">Tutorial Online</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Universitas Terbuka Banjarmasin. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
